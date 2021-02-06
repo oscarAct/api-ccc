@@ -16,7 +16,7 @@ const controller = {
         //configuring path and filename
         const storage = multer.diskStorage({
             destination: (req, file, cb) => {
-                cb(null, './storage/courses/videos');
+                cb(null, path.join(__dirname, '../storage/courses/videos'));
             },
             filename: (req, file, cb) => {
                 cb(null, Date.now() + '-' + file.originalname);
