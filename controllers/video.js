@@ -50,6 +50,7 @@ const controller = {
                 res.status(500).send({
                     status: false,
                     message: 'Type of file not allowed.',
+                    err,
                 });
 
                 // Validating incoming files exists
