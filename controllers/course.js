@@ -26,7 +26,8 @@ const controller = {
             validateTitle = !validator.isEmpty(params.title);
             validateCourseDesc = !validator.isEmpty(params.courseDesc);
             validateCoursePrice =
-                !validator.isEmpty(params.coursePrice) && validator.isCurrency(params.coursePrice);
+                !validator.isEmpty(params.coursePrice.toString()) &&
+                validator.isCurrency(params.coursePrice.toString());
         } catch (err) {
             return res.status(200).send({
                 message: 'the request is missing data ' + err,
